@@ -19,6 +19,9 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
 
+    - name: test
+      run: ls -l
+
     - run: ./gradlew clean testDebug -p androidApp/
 
   Shared:
@@ -38,8 +41,8 @@ jobs:
 
       - run: ./gradlew clean testDebugUnitTest -p shared/
 
-  KMP-iOS:
-    runs-on: macos-
+  iOS:
+    runs-on: macos-latest
 
     steps:
       - uses: actions/checkout@v4
