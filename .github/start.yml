@@ -1,0 +1,14 @@
+name: Start Jobs
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  Build:
+    uses: ./.github/workflows/build.yml
+
+  UnitTests:
+    uses: ./.github/workflows/test.yml
