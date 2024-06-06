@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
     - name: set up JDK 11
       uses: actions/setup-java@v3
@@ -17,10 +17,10 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-      - name: Setup Gradle
+    - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - run: ./gradlew clean testDebug -p androidApp/
+    - run: ./gradlew clean testDebug -p androidApp/
 
   Shared:
     runs-on: macos-latest
