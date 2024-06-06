@@ -58,6 +58,6 @@ jobs:
 
       - run: ./gradlew :shared:assembleSharedDebugXCFramework
 
-      - run: xcodebuild build test -list -project iosApp/iosApp.xcodeproj -configuration Debug -scheme iosApp -sdk iphoneos -destination name='iPhone 14' -verbose
+      - run: xcodebuild build test -list -project iosApp/iosApp.xcodeproj -configuration Debug -sdk iphoneos -destination name='iPhone 14' -verbose 
 
       - run: if [[ $(uname -m) == 'arm64' ]]; then ./gradlew clean iosSimulatorArm64Test -p shared/; else ./gradlew clean iosX64Test -p shared/; fi
